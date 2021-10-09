@@ -8,7 +8,7 @@
 import Foundation
 
 class ForeignStockHolding: StockHolding {
-    var conversionRate: Float
+    private var conversionRate: Float
     
     init(purchaseSharePrice: Float, currentSharePrice: Float, numberOfShares: Int, companyName: String, conversionRate: Float) {
         self.conversionRate = conversionRate
@@ -16,11 +16,15 @@ class ForeignStockHolding: StockHolding {
     }
     
     override func costInDollars() -> Float {
-        return self.purchaseSharePrice * Float(self.numberOfShares) * self.conversionRate
+        return self.getPurchaseSharePrice() * Float(self.getNumberOfShares()) * self.conversionRate
     }
     
     override func valueInDollars() -> Float {
-        return self.currentSharePrice * Float(self.numberOfShares) * self.conversionRate
+        return self.getCurrentSharePrice() * Float(self.getNumberOfShares()) * self.conversionRate
+    }
+    
+    func getConversionRate() -> Float {
+        return self.conversionRate
     }
     
 }

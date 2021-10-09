@@ -8,10 +8,10 @@
 import Foundation
 
 class StockHolding: NSObject {
-    var purchaseSharePrice: Float
-    var currentSharePrice: Float
-    var numberOfShares: Int
-    var companyName: String
+    private var purchaseSharePrice: Float
+    private var currentSharePrice: Float
+    private var numberOfShares: Int
+    private var companyName: String
     
     init(purchaseSharePrice: Float, currentSharePrice: Float, numberOfShares: Int, companyName: String) {
         self.purchaseSharePrice = purchaseSharePrice
@@ -26,5 +26,21 @@ class StockHolding: NSObject {
     
     func valueInDollars() -> Float {
         return self.currentSharePrice * Float(self.numberOfShares)
+    }
+    
+    func getPurchaseSharePrice() -> Float {
+        return self.purchaseSharePrice
+    }
+    
+    func getCurrentSharePrice() -> Float {
+        return self.currentSharePrice
+    }
+    
+    func getNumberOfShares() -> Int {
+        return self.numberOfShares
+    }
+    
+    func getCompanyName() -> String {
+        return self.companyName
     }
 }

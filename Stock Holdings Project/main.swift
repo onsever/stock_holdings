@@ -9,15 +9,15 @@ import Foundation
 
 func sortAlphabetically(stocks: [StockHolding]) -> Void {
     var stocksInformation = stocks
-    stocksInformation = stocksInformation.sorted(by: { $0.companyName > $1.companyName })
+    stocksInformation = stocksInformation.sorted(by: { $0.getCompanyName() < $1.getCompanyName() })
     
     for item in stocksInformation {
-        print("Company Name: \(item.companyName)")
-        print("Purchase Share Price: \(item.purchaseSharePrice)")
-        print("Current Share Price: \(item.currentSharePrice)")
-        print("Number of Shares: \(item.numberOfShares)")
+        print("Company Name: \(item.getCompanyName())")
+        print("Purchase Share Price: \(item.getPurchaseSharePrice())")
+        print("Current Share Price: \(item.getCurrentSharePrice())")
+        print("Number of Shares: \(item.getNumberOfShares())")
         if item is ForeignStockHolding {
-            print("Conversion Rate: \((item as! ForeignStockHolding).conversionRate)")
+            print("Conversion Rate: \((item as! ForeignStockHolding).getConversionRate())")
         }
         print("\n")
     }
@@ -28,12 +28,12 @@ func sortLowestToHighest(stocks: [StockHolding]) -> Void {
     stocksInformation = stocksInformation.sorted(by: { $0.valueInDollars() < $1.valueInDollars() })
     
     for item in stocksInformation {
-        print("Company Name: \(item.companyName)")
-        print("Purchase Share Price: \(item.purchaseSharePrice)")
-        print("Current Share Price: \(item.currentSharePrice)")
-        print("Number of Shares: \(item.numberOfShares)")
+        print("Company Name: \(item.getCompanyName())")
+        print("Purchase Share Price: \(item.getPurchaseSharePrice())")
+        print("Current Share Price: \(item.getCurrentSharePrice())")
+        print("Number of Shares: \(item.getNumberOfShares())")
         if item is ForeignStockHolding {
-            print("Conversion Rate: \((item as! ForeignStockHolding).conversionRate)")
+            print("Conversion Rate: \((item as! ForeignStockHolding).getConversionRate())")
         }
         print("\n")
     }
@@ -58,12 +58,12 @@ func displayLowestValue(stocks: [StockHolding]) -> Void {
     }
     
     print("Displaying the stock with the lowest value: ")
-    print("Company Name: \(lowestStock.companyName)")
-    print("Purchase Share Price: \(lowestStock.purchaseSharePrice)")
-    print("Current Share Price: \(lowestStock.currentSharePrice)")
-    print("Number of Shares: \(lowestStock.numberOfShares)")
+    print("Company Name: \(lowestStock.getCompanyName())")
+    print("Purchase Share Price: \(lowestStock.getPurchaseSharePrice())")
+    print("Current Share Price: \(lowestStock.getCurrentSharePrice())")
+    print("Number of Shares: \(lowestStock.getNumberOfShares())")
     if isForeign {
-        print("Conversion Rate: \((lowestStock as! ForeignStockHolding).conversionRate)")
+        print("Conversion Rate: \((lowestStock as! ForeignStockHolding).getConversionRate())")
     }
     print("\n")
     
@@ -88,12 +88,12 @@ func displayHighestValue(stocks: [StockHolding]) -> Void {
     }
     
     print("Displaying the stock with the highest value: ")
-    print("Company Name: \(highestStock.companyName)")
-    print("Purchase Share Price: \(highestStock.purchaseSharePrice)")
-    print("Current Share Price: \(highestStock.currentSharePrice)")
-    print("Number of Shares: \(highestStock.numberOfShares)")
+    print("Company Name: \(highestStock.getCompanyName())")
+    print("Purchase Share Price: \(highestStock.getPurchaseSharePrice())")
+    print("Current Share Price: \(highestStock.getCurrentSharePrice())")
+    print("Number of Shares: \(highestStock.getNumberOfShares())")
     if isForeign {
-        print("Conversion Rate: \((highestStock as! ForeignStockHolding).conversionRate)")
+        print("Conversion Rate: \((highestStock as! ForeignStockHolding).getConversionRate())")
     }
     print("\n")
     
@@ -118,12 +118,12 @@ func displayMostProfitableStock(stocks: [StockHolding]) -> Void {
     }
     
     print("Displaying the most profitable stock: ")
-    print("Company Name: \(mostProfitable.companyName)")
-    print("Purchase Share Price: \(mostProfitable.purchaseSharePrice)")
-    print("Current Share Price: \(mostProfitable.currentSharePrice)")
-    print("Number of Shares: \(mostProfitable.numberOfShares)")
+    print("Company Name: \(mostProfitable.getCompanyName())")
+    print("Purchase Share Price: \(mostProfitable.getPurchaseSharePrice())")
+    print("Current Share Price: \(mostProfitable.getCurrentSharePrice())")
+    print("Number of Shares: \(mostProfitable.getNumberOfShares())")
     if isForeign {
-        print("Conversion Rate: \((mostProfitable as! ForeignStockHolding).conversionRate)")
+        print("Conversion Rate: \((mostProfitable as! ForeignStockHolding).getConversionRate())")
     }
     print("\n")
     
@@ -148,12 +148,12 @@ func displayLeastProfitableStock(stocks: [StockHolding]) -> Void {
     }
     
     print("Displaying the least profitable stock: ")
-    print("Company Name: \(leastProfitable.companyName)")
-    print("Purchase Share Price: \(leastProfitable.purchaseSharePrice)")
-    print("Current Share Price: \(leastProfitable.currentSharePrice)")
-    print("Number of Shares: \(leastProfitable.numberOfShares)")
+    print("Company Name: \(leastProfitable.getCompanyName())")
+    print("Purchase Share Price: \(leastProfitable.getPurchaseSharePrice())")
+    print("Current Share Price: \(leastProfitable.getCurrentSharePrice())")
+    print("Number of Shares: \(leastProfitable.getNumberOfShares())")
     if isForeign {
-        print("Conversion Rate: \((leastProfitable as! ForeignStockHolding).conversionRate)")
+        print("Conversion Rate: \((leastProfitable as! ForeignStockHolding).getConversionRate())")
     }
     print("\n")
     
