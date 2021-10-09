@@ -1,1 +1,1 @@
-# stock_holdings
+# Stock Holdings Project
