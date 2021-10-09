@@ -160,15 +160,11 @@ func displayLeastProfitableStock(stocks: [StockHolding]) -> Void {
 }
 
 var stocks: [StockHolding] = [StockHolding]()
-
+// These values are for the test purposes.
 stocks.append(StockHolding(purchaseSharePrice: 2.30, currentSharePrice: 4.50, numberOfShares: 40, companyName: "Facebook"))
-
 stocks.append(StockHolding(purchaseSharePrice: 12.19, currentSharePrice: 10.56, numberOfShares: 90, companyName: "Apple"))
-
 stocks.append(StockHolding(purchaseSharePrice: 45.10, currentSharePrice: 49.51, numberOfShares: 210, companyName: "Google"))
-
 stocks.append(ForeignStockHolding(purchaseSharePrice: 1.50, currentSharePrice: 2.60, numberOfShares: 35, companyName: "Lesware", conversionRate: 1.2))
-
 stocks.append(ForeignStockHolding(purchaseSharePrice: 4.65, currentSharePrice: 5.66, numberOfShares: 41, companyName: "Mastercard", conversionRate: 1.2))
 
 var isMenuOnline = true
@@ -192,7 +188,7 @@ while true {
         isValid = true
         for _ in 0..<stockNumber {
             print("Enter the company name: ")
-            let companyName: String = readLine()!
+            let companyName: String = readLine()!.capitalized
             
             print("Enter the purchase share price: ")
             let purchaseSharePrice: Float = Float(readLine()!) ?? 0.0
@@ -210,7 +206,7 @@ while true {
         isValid = true
         for _ in 0..<stockNumber {
             print("Enter the company name: ")
-            let companyName: String = readLine()!
+            let companyName: String = readLine()!.capitalized
             
             print("Enter the purchase share price: ")
             let purchaseSharePrice: Float = Float(readLine()!) ?? 0.0

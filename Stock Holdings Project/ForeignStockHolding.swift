@@ -15,15 +15,15 @@ class ForeignStockHolding: StockHolding {
         super.init(purchaseSharePrice: purchaseSharePrice, currentSharePrice: currentSharePrice, numberOfShares: numberOfShares, companyName: companyName)
     }
     
-    override func costInDollars() -> Float {
+    override public func costInDollars() -> Float {
         return self.getPurchaseSharePrice() * Float(self.getNumberOfShares()) * self.conversionRate
     }
     
-    override func valueInDollars() -> Float {
+    override public func valueInDollars() -> Float {
         return self.getCurrentSharePrice() * Float(self.getNumberOfShares()) * self.conversionRate
     }
     
-    func getConversionRate() -> Float {
+    public func getConversionRate() -> Float {
         return self.conversionRate
     }
     

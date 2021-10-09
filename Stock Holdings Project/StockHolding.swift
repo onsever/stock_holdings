@@ -20,27 +20,27 @@ class StockHolding: NSObject {
         self.companyName = companyName
     }
     
-    func costInDollars() -> Float {
+    public func costInDollars() -> Float {
         return self.purchaseSharePrice * Float(self.numberOfShares)
     }
     
-    func valueInDollars() -> Float {
+    public func valueInDollars() -> Float {
         return self.currentSharePrice * Float(self.numberOfShares)
     }
     
-    func getPurchaseSharePrice() -> Float {
+    public func getPurchaseSharePrice() -> Float {
         return self.purchaseSharePrice
     }
     
-    func getCurrentSharePrice() -> Float {
+    public func getCurrentSharePrice() -> Float {
         return self.currentSharePrice
     }
     
-    func getNumberOfShares() -> Int {
+    public func getNumberOfShares() -> Int {
         return self.numberOfShares
     }
     
-    func getCompanyName() -> String {
+    public func getCompanyName() -> String {
         return self.companyName
     }
 }
